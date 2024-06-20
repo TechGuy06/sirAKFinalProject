@@ -1,0 +1,144 @@
+p{
+    color: black;
+}
+h2,h3{
+    color: black;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #fff; /* White text color */
+    background: #000; /* Black background */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    color: #fff; /* White text color */
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header a {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header nav {
+    float: left;
+}
+
+header .highlight, header .current a {
+    color: #e8491d; /* Highlight color */
+}
+
+header a:hover {
+    color: #ccc; /* Light gray on hover */
+}
+
+.profile-pic {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #e8491d;
+}
+
+section {
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+#about {
+    background: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+    color: #fff; /* White text color */
+    text-align: center;
+}
+
+#projects {
+    background: rgba(232, 73, 29, 0.7); /* Red with 70% opacity */
+    color: #fff; /* White text color */
+}
+
+.project-grid {
+    display: flex;
+    justify-content: space-between;
+}
+.project-card {
+background: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
+color: #333; /* Dark gray text color */
+padding: 20px;
+margin: 10px;
+border-radius: 5px;
+box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* White shadow with 20% opacity */
+flex-basis: 30%;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Move the card up slightly on hover */
+    box-shadow: 0 12px 24px rgba(31, 38, 135, 0.4); /* Increase shadow on hover */
+}
+
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+#contact {
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #e8491d; /* Highlight color on hover */
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
