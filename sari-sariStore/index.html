@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing Brand Store</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <a href="#" class="logo">
+        <img src="images/logo2.png" alt="logo">
+    </a>
+    <nav class="navbar">
+        <button type="button" onclick="displayJeans()" class="button-81">Jeans</button>
+        <button type="button" onclick="displayTshirt()" class="button-81">T-shirt</button>
+        <button type="button" onclick="displayPerfume()" class="button-81">Perfume</button>
+        <button type="button" onclick="displaySando()" class="button-81">Sando</button>
+        <button type="button" onclick="displayToy()" class="button-81">Toys</button>
+        <button type="button"  class="button-81">Stock Management</button>
+</header>
+  <div class="cart-summary">
+    <button id="cart-button" onclick="toggleCart()" class="button-81"> (<span id="cart-count-summary">0</span>)</button>
+    <div class="cart-content" id="cart-content">
+      <div id="cart-items"></div>
+      <div>
+        <input type="radio" name="discount" id="student" value="0.10">
+        <label for="student">Student 15%</label><br>
+        <input type="radio" name="discount" id="senior" value="0.2">
+        <label for="senior">Senior 20%</label><br>
+        <input type="radio" name="discount" id="disabled" value="0.30">
+        <label for="disabled">Disabled 30%</label><br>
+      </div>
+      <p>Total: $<span id="cart-total">0</span></p>
+      <button onclick="checkout()" id="check" class="button-81">Checkout</button>
+      </div>
+    </div>
+    <button id="scrollBtn" class="button-81"></button>
+  </div>
+  <main>
+    <section class="jeans" id="jeans">
+      <h2>Jeans</h2>
+      <div class="item">
+        <img src="images/jeans1.png" alt="Jeans 1">
+        <div class="item-details">
+          <h3>Jeans 1</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="jeans1-price">30</span></p>
+          <p class="stockFont">Stock: <span id="jeans1-stock">10</span></p>
+          <button onclick="addToCart('Jeans 1', 'jeans1')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('jeans1')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      
+      <div class="item">
+        <img src="images/jeans2.png" alt="Jeans 2">
+        <div class="item-details">
+          <h3>Jeans 2</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="jeans2-price">20</span></p>
+          <p class="stockFont">Stock: <span id="jeans2-stock">10</span></p>
+          <button onclick="addToCart('Jeans 2', 'jeans2')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('jeans2')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      
+      <div class="item">
+        <img src="images/jeans3.png" alt="Jeans 3">
+        <div class="item-details">
+          <h3>Jeans 3</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="jeans3-price">10</span></p>
+          <p class="stockFont">Stock: <span id="jeans3-stock">10</span></p>
+          <button onclick="addToCart('Jeans 3', 'jeans3')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('jeans3')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/jeans4.png" alt="Jeans 4">
+        <div class="item-details">
+          <h3>Jeans 4</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="jeans4-price">15</span></p>
+          <p class="stockFont">Stock: <span id="jeans4-stock">10</span></p>
+          <button onclick="addToCart('Jeans 4', 'jeans4')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('jeans4')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+    </section>
+    <section class="tshirt" id="tshirt" >
+      <h2 id="tshirt">T-shirt</h2>
+      <div class="item">
+        <img src="images/t-shirt1.png" alt="T-shirt 1">
+        <div class="item-details">
+          <h3>T-shirt 1</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="tshirt1-price">20</span></p>
+          <p class="stockFont">Stock: <span id="tshirt1-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 1', 'tshirt1')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('tshirt1')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      
+      <div class="item">
+        <img src="images/t-shirt2.png" alt="T-shirt 2">
+        <div class="item-details">
+          <h3>T-shirt 2</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="tshirt2-price">15</span></p>
+          <p class="stockFont">Stock: <span id="tshirt2-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 2', 'tshirt2')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('tshirt2')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      
+      <div class="item">
+        <img src="images/t-shirt3.png" alt="T-shirt 3">
+        <div class="item-details">
+          <h3>T-shirt 3</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="tshirt3-price">10</span></p>
+          <p class="stockFont">Stock: <span id="tshirt3-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 3', 'tshirt3')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('tshirt3')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/t-shirt4.png" alt="T-shirt 4">
+        <div class="item-details">
+          <h3>T-shirt 4</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="tshirt4-price">10</span></p>
+          <p class="stockFont">Stock: <span id="tshirt4-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 4', 'tshirt4')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('tshirt4')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <!-- Add more items with descriptions -->
+    </section>
+    <section class="perfume" id="perfume" >
+      <h2 id="perfume">Perfume</h2>
+      <div class="item">
+        <img src="images/perfume1.png" alt="Perfume 1">
+        <div class="item-details">
+          <h3>Perfume 1</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="perfume1-price">5</span></p>
+          <p class="stockFont">Stock: <span id="perfume1-stock">10</span></p>
+          <button onclick="addToCart('Perfume 1', 'perfume1')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('perfume1')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/perfume2.png" alt="Perfume 2">
+        <div class="item-details">
+          <h3>Perfume 2</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="perfume2-price">8</span></p>
+          <p class="stockFont">Stock: <span id="perfume2-stock">10</span></p>
+          <button onclick="addToCart('Perfume 2', 'perfume2')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('perfume2')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/perfume3.png" alt="Perfume 3">
+        <div class="item-details">
+          <h3>Perfume 3</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="perfume3-price">9</span></p>
+          <p class="stockFont">Stock: <span id="perfume3-stock">10</span></p>
+          <button onclick="addToCart('Perfume 3', 'perfume3')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('perfume3')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/perfume4.png" alt="Perfume 4">
+        <div class="item-details">
+          <h3>Perfume 4</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="perfume4-price">7</span></p>
+          <p class="stockFont">Stock: <span id="perfume4-stock">10</span></p>
+          <button onclick="addToCart('Perfume 4', 'perfume4')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('perfume4')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <!-- Add more items with descriptions -->
+    </section>
+    <section class="sando" id="sando" >
+      <h2 id="sando">Sando</h2>
+      <div class="item">
+        <img src="images/sando1.png" alt="Sando 1">
+        <div class="item-details">
+          <h3>Sando 1</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="sando1-price">8</span></p>
+          <p class="stockFont">Stock: <span id="sando1-stock">10</span></p>
+          <button onclick="addToCart('Sando 1', 'sando1')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('sando1')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sando2.png" alt="Sando 2">
+        <div class="item-details">
+          <h3>Sando 2</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="sando2-price">10</span></p>
+          <p class="stockFont">Stock: <span id="sando2-stock">10</span></p>
+          <button onclick="addToCart('Sando 2', 'sando2')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('sando2')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sando3.png" alt="Sando 3">
+        <div class="item-details">
+          <h3>Sando 3</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="sando3-price">11</span></p>
+          <p class="stockFont">Stock: <span id="sando3-stock">10</span></p>
+          <button onclick="addToCart('Sando 3', 'sando3')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('sando3')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sando4.png" alt="Sando 4">
+        <div class="item-details">
+          <h3>Sando 4</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="sando4-price">10</span></p>
+          <p class="stockFont">Stock: <span id="sando4-stock">10</span></p>
+          <button onclick="addToCart('Sando 4', 'sando4')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('sando4')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <!-- Add more items with descriptions -->
+    </section>
+    <section class="toy" id="toy" >
+      <h2 id="toy">Toys</h2>
+      <div class="item">
+        <img src="images/toy1.png" alt="Toy 1">
+        <div class="item-details">
+          <h3>Toy 1</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="toy1-price">5</span></p>
+          <p class="stockFont">Stock: <span id="toy1-stock">10</span></p>
+          <button onclick="addToCart('Toy 1', 'toy1')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('toy1')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/toy2.png" alt="Toy 2">
+        <div class="item-details">
+          <h3>Toy 2</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="toy2-price">6</span></p>
+          <p class="stockFont">Stock: <span id="toy2-stock">10</span></p>
+          <button onclick="addToCart('Toy 2', 'toy2')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('toy2')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/toy3.png" alt="Toy 3">
+        <div class="item-details">
+          <h3>Toy 3</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="toy3-price">8</span></p>
+          <p class="stockFont">Stock: <span id="toy3-stock">10</span></p>
+          <button onclick="addToCart('Toy 3', 'toy3')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('toy3')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/toy4.png" alt="Toy 4">
+        <div class="item-details">
+          <h3>Toy 4</h3>
+          <p>This piece boasts clean lines and luxurious fabric, draping elegantly over your frame. </p>
+          <br>
+          <p class="priceFont">Price: $<span id="toy4-price">5</span></p>
+          <p class="stockFont">Stock: <span id="toy4-stock">10</span></p>
+          <button onclick="addToCart('Toy 4', 'toy4')" id="addToCartBtn"></button>
+          <button onclick="increaseStock('toy4')" id="addStock" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <!-- Add more items with descriptions -->
+    </section>
+    <!-- Add more sections for other categories -->
+  </main>
+  <button id="backButton">Back</button>
+</body>
+<script src="script.js"></script>
+</html>

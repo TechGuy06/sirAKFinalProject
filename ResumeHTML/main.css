@@ -1,0 +1,168 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color: inherit;
+	font-size: 16px; 
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #000;
+}
+
+a:hover{ 
+	text-decoration: underline;
+	color: #218c74;
+	font-weight: bold;
+}
+a:active{ 
+	text-decoration: underline;
+	color: #000;
+	font-weight: bold;
+}
+#wrapper{
+	width: 965px;
+	margin: 0 auto;	
+}
+#content{
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+	width: 960px;
+	text-align: left;
+	overflow: auto;
+	position: relative;
+	margin: 25px 0px 25px 0px;
+	border: #fff solid 2px;
+}
+.blank{
+	float: none;
+	clear: both;
+	margin: 20px 0px 20px 0px;
+}
+
+#contact-details .header_1{
+	float: left;
+	width: 350px;
+	text-align: center;
+	margin: 40px 0px 0px 20px;
+}
+#contact-details .header_1 img{
+	border: #dfe4ea solid 2px;
+	padding: 16px;
+	margin: 10px 0px 0px 0px;
+}
+#contact-details .header_2{
+	float: left;
+	width: 570px;
+	margin: 40px 0px 0px 10px;
+}
+#contact-details .header_2 a{
+	font-weight: normal;
+}
+#contact-details  h1{
+	margin: 0px 0px 0px 20px;
+	font-size: 52px;
+	font-weight: bold;
+}
+#contact-details  h3{
+	margin: 0px 0px 32px 20px;
+	padding-left: 10px;
+	font-size: 25px;
+	color: #84817a;
+}
+#contact-details ul.info{
+	list-style: none;
+	margin: 0px 0px 15px -12px;
+	font-size: 18px;
+}
+#contact-details li.address , #contact-details li.phone, 
+#contact-details li.email, #contact-details li.site_url, 
+#contact-details li.facebook	{
+    padding: 0px 0px 12px 40px;
+}
+li.address a, li.phone a, li.email a, li.site_url a, li.facebook a{
+	color: #000;
+}
+li.address a:hover, li.phone a:hover, li.email a:hover, li.site_url a:hover, li.facebook a:hover{
+	color: blue;
+	font-weight: bold;
+}
+h2	{
+	margin: 40px 0px 0px 0px; 
+	font-size: 22px;
+	font-weight: bold;
+}
+dl	{
+	margin: 0px 50px 0px 0px;
+}
+dt	{
+	float: left;
+	width: 200px;
+	font-size: 23px;
+	font-weight:bolder;
+	text-align: right;
+	color: #84817a;
+}
+dd{
+	width: 620px; 
+	float: right;
+	margin-right: 20px;
+}
+dd#contact 	dt#contact dl#contact{
+	margin: 0px;
+}
+p.edu-info{
+	margin: 10px 0px 0px 0px;
+	font-weight: bold;
+	color: #218c74;
+}
+p.school{
+	font-size: large;
+	font-weight: bold;
+}
+p.edu-info a{
+	color: #000;
+}
+p.edu-info a:hover{
+	color: blue;
+}
+p.time{
+	margin: 0px;
+	color: #84817a;
+}
+#skills ul.list1{	
+	float: left;
+	list-style:square;
+	margin: 0px 0px 0px -40px;
+	width: 220px;
+}
+#skills ul.list2{
+	float: left;
+	list-style: square;
+	margin: 0px 0px 0px 0px;
+	width: 220px;
+}
+#skills li{
+    padding: 0px 0px 0px 25px;
+}
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+/* Floating Back Button */
+#backButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+#backButton:hover {
+    background-color: lightblue;
+}

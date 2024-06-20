@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Yammy Yum</title>
+</head>
+<body>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Cart</h2>
+          <ul id="cart-items">
+          </ul>
+          <p>Total: $<span id="total">0</span></p>
+          <button id="confirm">Confirm Order</button>
+        </div>
+      </div>
+    <header class="header" >
+        <a href="#" class="logo">
+            <img src="./image/logo.png" alt="logo">
+        </a>
+        <nav class="navbar">
+            <a href="./index.html" class="active">home</a>
+            <a href="#" onclick="displayMainDish()">main dish</a>
+            <a href="#" onclick="displayVegetableDish()">vegetables</a>
+            <a href="#" onclick="displayDesserts()">desserts</a>
+            <a href="#" onclick="displayDrinks()">drinks</a>
+            <a href="#" onclick="displayAddOns()">ad-ons</a>
+			<a href="#" id="checkout">check-out</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="content">
+        <h3>Yammy Yum</h3>
+        <p>Welcome to our restaurant! We're a cozy spot that serves classic, made-from-scratch American cooking, open every day since 1990. Our menu features a variety of delicious dishes, all prepared with fresh and simple ingredients, just like how we started. Come and enjoy a taste of our history and tradition, with a side of warm hospitality.</p>
+        </div>
+    </section>
+    <section class="product-list1" id="product-list1">
+        <h1 class="heading">Main Dish <span>Meals</span> </h1>
+        <div class="box-container">
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/main1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Beef and mushroom Strogonoff with rice</a>
+                    <span>₱110.00</span>
+                    <p>This beef and mushroom dish is a delightful combination of tender, slow-cooked beef and flavorful mushrooms.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="110">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/main2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Pan fried salmon with tender asparagus and courgette</a>
+                    <span>₱150.00</span>
+                    <p>Pan-fried salmon served with tender asparagus and courgette makes for a delightful and easy dinner option.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="150">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/main3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">pork ribs and barbeque sauce with parsley and bread</a>
+                    <span>₱200.00</span>
+                    <p>Pork ribs barbeque is a delicious and flavorful dish where pork ribs are rubbed with a mixture of spices, slow-cooked until tender, and then basted with a homemade barbecue sauce.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="200">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/main4.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Tapsilog ala King</a>
+                    <span>₱75.00</span>
+                    <p>Tapsilog is a popular Filipino breakfast dish that consists of marinated and fried beef (tapa), garlic fried rice (sinangag), and fried egg (itlog).</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="75">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/main5.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Grilled chicken breast</a>
+                    <span>₱100.00</span>
+                    <p>Grilled chicken breasts are a classic and delicious dish that is easy to prepare and can be customized with a variety of marinades and seasonings.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="100">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="product-list2" id="product-list2">
+        <h1 class="heading">Vegetable Dish <span>Meals</span></h1>
+        <div class="box-container">
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/vegetable1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Vegetable Pie</a>
+                    <span>₱100.00</span>
+                    <p>A vegetable pie is a savory dish made by filling a pie crust with a mixture of vegetables and a binding agent, such as a sauce or a custard.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="100">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/vegetable2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Fried Potatoes</a>
+                    <span>₱70.00</span>
+                    <p>Fried potatoes are thin potato rounds that are browned in a skillet until crispy and golden. They have a perfectly seasoned flavor that is savory, salty, and smoky.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="70">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/vegetable3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Bowl of vegetable salad</a>
+                    <span>₱65.00</span>
+                    <p>A vegetable salad is a dish that typically consists of various washed and cut raw vegetables, often combined with a dressing</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="65">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="product-list3" id="product-list3">
+        <h1 class="heading">Desserts</h1>
+        <div class="box-container">
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/dessert1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Brownie with ice cream</a>
+                    <span>₱50.00</span>
+                    <p>A delightful dessert combining rich, fudgy brownies with creamy ice cream, often topped with hot fudge sauce. This indulgent treat can be made easy with store-bought ingredients or elevated with homemade components.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="50">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/dessert2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Chocolate cake</a>
+                    <span>₱70.00</span>
+                    <p>A chocolate cake is a classic dessert that is loved by many. It typically consists of layers of moist chocolate sponge, filled and covered with a rich chocolate frosting.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="70">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/dessert3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Brownie with a twist</a>
+                    <span>₱65.00</span>
+                    <p>A brownie is a chocolate baked confection that can be either fudgy or cakey. It often has a glossy "skin" on its top crust and can include nuts, frosting, or other ingredients.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="65">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="product-list4" id="product-list4">
+        <h1 class="heading">Drinks</h1>
+        <div class="box-container">
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/drinks1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Party cocktails</a>
+                    <span>₱60.00</span>
+                    <p>Brownie ice cream is a delicious and indulgent dessert made by swirling chunks of rich, fudgy brownies into a base of creamy vanilla ice cream.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="60">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/drinks2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Cranberry cocktails</a>
+                    <span>₱65.00</span>
+                    <p>A cranberry cocktail is a refreshing and flavorful drink made with cranberry juice and various other ingredients, such as vodka, champagne, or gin.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="65">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/drinks3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Strawberry smoothie</a>
+                    <span>₱50.00</span>
+                    <p>A strawberry smoothie is a refreshing and healthy drink made by blending together fresh or frozen strawberries with a liquid, such as milk or yogurt.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="50">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="product-list5" id="product-list5">
+        <h1 class="heading">Ad-Ons</h1>
+        <div class="box-container">
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/adds1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Fried Rice</a>
+                    <span>₱60.00</span>
+                    <p>Fried rice is a dish that consists of cooked rice that has been stir-fried in a wok or frying pan with other ingredients such as eggs, vegetables, seafood, or meat.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="60">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/adds2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Plain Rice</a>
+                    <div class="item">
+                    <p class="title">₱20</p>
+                    <p>Plain rice, also known as steamed rice, is a simple and versatile dish made by cooking rice in water until it absorbs the liquid and becomes soft and fluffy.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="20">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/adds3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Vegetable Rice</a>
+                    <div class="item">
+                    <p class="title">₱40</p>
+                    <p>Vegetable Rice is a flavorful and colorful dish, made with brown rice and an array of vegetables. It's a healthier take on traditional greasy take-out fried rice, and can be easily customized with whatever vegetables you have on hand.</p>
+                    <div class="quantity-container">
+					<span">Qty:</span>
+                      <input type="number" class="quantity" value="1" min="1">
+					  <br>
+                      <button class="add-to-cart" data-price="15">Add to Cart</button>
+                      <button class="quantity-button increase">+</button>
+                      <button class="quantity-button decrease">-</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <button onclick="displayTop()">Checkout</button>
+    <button id="backButton">Back</button>
+</body>
+<script>
+function displayMainDish(){
+    var targetElement = document.getElementById('product-list1');
+    targetElement.scrollIntoView();
+}
+function displayVegetableDish(){
+    var targetElement = document.getElementById('product-list2');
+    targetElement.scrollIntoView();
+}
+function displayDesserts(){
+    var targetElement = document.getElementById('product-list3');
+    targetElement.scrollIntoView();
+}
+function displayDrinks(){
+    var targetElement = document.getElementById('product-list4');
+    targetElement.scrollIntoView();
+}
+function displayAddOns(){
+    var targetElement = document.getElementById('product-list5');
+    targetElement.scrollIntoView();
+}
+function displayTop(){
+    var targetElement = document.getElementById('checkout');
+    targetElement.scrollIntoView();
+}
+ const cart = [];
+
+ function updateCart() {
+   const cartItems = document.getElementById('cart-items');
+   cartItems.innerHTML = '';
+   let total = 0;
+   cart.forEach(item => {
+     const li = document.createElement('li');
+     li.textContent = `Price: $${item.price}, Quantity: ${item.quantity}`;
+     cartItems.appendChild(li);
+     total += item.price * item.quantity;
+   });
+   document.getElementById('total').textContent = total.toFixed(2);
+ }
+
+ document.querySelectorAll('.add-to-cart').forEach(button => {
+   button.addEventListener('click', () => {
+     const price = parseFloat(button.dataset.price);
+     const quantity = parseInt(button.parentElement.querySelector('.quantity').value);
+     const existingItem = cart.find(item => item.price === price);
+	 alert('Successfully added to cart!');
+     if (existingItem) {
+       existingItem.quantity += quantity;
+     } else {
+       cart.push({ price, quantity });
+     }
+     updateCart();
+   });
+ });
+
+ document.getElementById('checkout').addEventListener('click', () => {
+   const modal = document.getElementById('modal');
+   modal.style.display = 'block';
+   updateCart();
+ });
+
+ document.getElementsByClassName('close')[0].addEventListener('click', () => {
+   const modal = document.getElementById('modal');
+   modal.style.display = 'none';
+ });
+
+ document.getElementById('confirm').addEventListener('click', () => {
+   alert('Order confirmed!');
+   const modal = document.getElementById('modal');
+   modal.style.display = 'none';
+   cart.length = 0;
+   updateCart();
+ });
+
+ document.querySelectorAll('.quantity-button').forEach(button => {
+   button.addEventListener('click', () => {
+     const input = button.parentElement.querySelector('.quantity');
+     let value = parseInt(input.value);
+     if (button.classList.contains('increase')) {
+       value++;
+     } else if (button.classList.contains('decrease')) {
+       value = Math.max(1, value - 1);
+     }
+     input.value = value;
+   });
+ });
+
+ document.getElementById("backButton").onclick = function () {
+            window.history.back();
+        };
+</script>
+</html>

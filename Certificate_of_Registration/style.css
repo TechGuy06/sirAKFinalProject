@@ -1,0 +1,161 @@
+#wrapper{
+	width: 965px;
+	margin: 0 auto;
+    background-image: url(images/background2.png); */
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;	
+}
+#content{
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+	width: 960px;
+	text-align: left;
+	overflow: auto;
+	position: relative;
+	margin: 25px 0px 25px 0px;
+	border: #fff solid 2px;
+}
+
+.TableContent {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 0.2px solid maroon;
+    text-align: center;
+    }
+    
+.data {
+    color: maroon;
+    font-family: "Arial";
+    font-weight: 400;
+}
+
+.tblPersonal_info {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid maroon;
+    text-align: left;
+}
+.tblPersonal_info caption{
+    background-color: maroon;
+    color: white;
+}
+
+.tblSummary {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid maroon;
+    text-align: left;
+    margin-right: 20px;
+    background-color: #fdeca6;
+}
+
+.form_header {
+    text-align: center;
+    font-family: "Arial";
+    font-size: 110%;
+    color: maroon;
+}
+
+#schoolYear {
+    text-align: center;
+    font-family: "Arial";
+    font-size: 110%;
+}
+.blank{
+    float: none;
+    clear: both;
+    margin: 20px 0px 20px 0px;
+}
+#scholarship{
+    text-indent: 50px;
+}
+.head{
+    text-align: left;
+    color: maroon;
+    font-weight: lighter;
+}
+.head1{
+    color: maroon;
+    font-weight: lighter;
+}
+.value{
+    text-align: left;
+}
+.subj{
+    text-align: left;
+    padding-left: 5px;
+}
+.val{
+    text-align: left;
+}
+#img1{
+    height: 100px;
+    width: 100px;
+    margin: 50;
+    padding-left: 30px;
+}
+#img2{
+    height: 100px;
+    width: 100px;
+    margin: 50;
+    padding-right: 30px;
+}
+.label{
+    color: maroon;
+    border:0.01rem solid;
+    border-color: brown;
+    border-color: maroon;
+}
+.top_lbl{
+    text-align: left;
+    color: maroon;
+    border-color: maroon;
+    padding-left: 10px;
+}
+.payment_details{
+    text-align: left;
+    padding-left: 20px;
+    color: maroon;
+    border-color: maroon;
+}
+.payment_value{
+    text-align: right;
+    padding-right: 20px;
+    border-color: maroon;
+}
+.term_payment{
+    text-align: left;
+    padding-right: 20px;
+    border-color: maroon;
+}
+.cashier{
+    border-color: maroon;
+    text-align: center;
+    color: maroon;
+}
+.bottom{
+    color: maroon;
+}
+
+/* Floating Back Button */
+#backButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: maroon;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+#backButton:hover {
+    background-color: darkred;
+}
