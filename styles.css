@@ -1,0 +1,95 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure body covers at least the viewport height */
+}
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+header h1 {
+    font-size: 2.5rem;
+}
+
+.navbar {
+    justify-content: flex-end;
+}
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+.bg-custom {
+    background-color: #007bff;
+    color: #fff;
+    padding: 4rem 0;
+}
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1rem 0;
+    width: 100%;
+    margin-top: auto; /* Push footer to the bottom */
+}
+footer p {
+    margin-bottom: 0;
+}
+.social-media .btn {
+    color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease-in-out;
+}
+.social-media .btn:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+/* Custom CSS for grid layout */
+#projects .col-md-6 {
+    flex: 0 0 calc(50% - 1rem); /* Two projects per row with margin */
+    max-width: calc(50% - 1rem);
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    #projects .col-md-6 {
+        flex: 0 0 100%; /* Full width on smaller screens */
+        max-width: 100%;
+    }
+}
+.social-media .btn {
+color: white; /* Default icon color */
+border-color: transparent; /* Remove border color */
+background-color: transparent !important; /* Ensure no background color by default */
+transition: all 0.3s ease-in-out;
+}
+
+.social-media .btn:hover {
+color: black; /* Color on hover */
+background-color: #007bff; /* Background color on hover */
+border-color: #007bff; /* Border color on hover */
+}
