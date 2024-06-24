@@ -4,52 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificate of Registration</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="wrapper">
+    <div class="container">
         <div id="content">
             <div class="blank">&nbsp;</div>
-            <div style="text-align: left;">
-                <img src="images/seal.png" id="img1" style="float:left;">
+            <div class="row">
+                <div class="col-6">
+                    <img src="images/seal.png" id="img1" class="float-left">
+                </div>
+                <div class="col-6 text-right">
+                    <img src="images/logo.png" id="img2" class="float-right">
+                </div>
             </div>
-            <div style="text-align: right;">
-                <img src="images/logo.png" id="img2" style="float:right;">
+            <div class="row">
+                <div class="col-12 text-center mb-3">
+                    <div class="form_header">City of Tagaytay</div>
+                    <div class="form_header"><b>CITY COLLEGE OF TAGAYTAY</b></div>
+                    <div class="form_header">Akle St., Kaybagal South, Tagaytay City</div>
+                    <div class="form_header">Telephone No:(046) 483-0470</div>
+                </div>
             </div>
-            <div class="form_header">City of Tagaytay</div>
-            <div class="form_header"><b>CITY COLLEGE OF TAGAYTAY</b></div>
-            <div class="form_header">Akle St., Kaybagal South, Tagaytay City</div>
-            <div class="form_header">Telephone No:(046) 483-0470</div><br>
-            <div class="form_header"><b>CERTIFICATE OF REGISTRATION</b></div>
-            <div id="schoolYear">A.Y. 2023-2024, 2nd Semester</div>
-            <br>
-            <table class="tblPersonal_info">
-                <caption>REGISTRATION INFORMATION</caption>
-                <tr>
-                    <td class="data">NAME:</td>
-                    <td class="val">OCAMPO MARZAN D.</td>
-                    <td class="data">DATE:</td>
-                    <td>2024-20-03</td>
-                </tr>
-                <tr>
-                    <td class="data">PROGRAM:</td>
-                    <td class="val">Bachelor of Science in Information Technology</td>
-                    <td class="data">STUDENT NUMBER:</td>
-                    <td>2020020141</td>
-                </tr>
-                <tr>
-                    <td class="data">MAJOR:</td>
-                    <td>None</td>
-                    <td class="data">YEAR LEVEL:</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td class="data">REGISTRATION STATUS:</td>
-                    <td>regular</td>
-                </tr>
-            </table>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="form_header"><b>CERTIFICATE OF REGISTRATION</b></div>
+                    <div id="schoolYear">A.Y. 2023-2024, 2nd Semester</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-bordered tblPersonal_info">
+                        <caption>REGISTRATION INFORMATION</caption>
+                        <tbody>
+                            <tr>
+                                <td class="data">NAME:</td>
+                                <td class="val">OCAMPO MARZAN D.</td>
+                                <td class="data">DATE:</td>
+                                <td>2024-20-03</td>
+                            </tr>
+                            <tr>
+                                <td class="data">PROGRAM:</td>
+                                <td class="val">Bachelor of Science in Information Technology</td>
+                                <td class="data">STUDENT NUMBER:</td>
+                                <td>2020020141</td>
+                            </tr>
+                            <tr>
+                                <td class="data">MAJOR:</td>
+                                <td>None</td>
+                                <td class="data">YEAR LEVEL:</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="data">REGISTRATION STATUS:</td>
+                                <td>regular</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <table class="TableContent">
                 <tbody>
                     <tr>
@@ -304,6 +321,8 @@
         </div>
     </div>
     <button id="backButton">Back</button>
+    <!-- Bootstrap JS and your custom script -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById("backButton").onclick = function () {
             window.history.back();
