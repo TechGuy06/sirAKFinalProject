@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="main.css">
     <style>
         body {
             font-size: 14px;
             line-height: 1.6;
             background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
             padding: 20px;
         }
         .container {
             max-width: 800px;
+            width: 100%;
             background-color: white;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -79,11 +85,11 @@
     </style>
 </head>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" class="container">
         <header>
             <div class="jumbotron text-center">
                 <div class="container">
-                    <img src="Formal.jpg" class="img-fluid rounded-circle mb-3" width="200" height="200" alt="Photo of Marzan D. Ocampo">
+                    <img src="Formal.jpg" class="img-circle" width="200" height="200" alt="Photo of Marzan D. Ocampo">
                     <h1>Marzan D. Ocampo</h1>
                     <p class="lead">Third Year BSIT College Student</p>
                     <ul class="list-unstyled">
@@ -96,7 +102,7 @@
                 </div>
             </div>
         </header>
-        <main class="container">
+        <main>
             <section class="mb-5">
                 <h2>Profile</h2>
                 <p>
@@ -105,41 +111,43 @@
             </section>
             <section class="mb-5">
                 <h2>Education</h2>
-                <table class="table table-striped">
-                    <thead>
-                        <tr class="table-info">
-                            <th>Level</th>
-                            <th>Year</th>
-                            <th>Institution</th>
-                            <th>Location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>College</td>
-                            <td>Current</td>
-                            <td>City College of Tagaytay</td>
-                            <td>Kaybagal South, Tagaytay City, Cavite, Philippines</td>
-                        </tr>
-                        <tr>
-                            <td>Secondary</td>
-                            <td>2019 - 2020</td>
-                            <td>Anuling National High School</td>
-                            <td>Anuling Lejos II, Mendez Cavite, Philippines</td>
-                        </tr>
-                        <tr>
-                            <td>Elementary</td>
-                            <td>2015 - 2019</td>
-                            <td>Buna Lejos Elementary School</td>
-                            <td>Buna Lejos I, Indang Cavite, Philippines</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="info">
+                                <th>Level</th>
+                                <th>Year</th>
+                                <th>Institution</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>College</td>
+                                <td>Current</td>
+                                <td>City College of Tagaytay</td>
+                                <td>Kaybagal South, Tagaytay City, Cavite, Philippines</td>
+                            </tr>
+                            <tr>
+                                <td>Secondary</td>
+                                <td>2019 - 2020</td>
+                                <td>Anuling National High School</td>
+                                <td>Anuling Lejos II, Mendez Cavite, Philippines</td>
+                            </tr>
+                            <tr>
+                                <td>Elementary</td>
+                                <td>2015 - 2019</td>
+                                <td>Buna Lejos Elementary School</td>
+                                <td>Buna Lejos I, Indang Cavite, Philippines</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
             <section class="mb-5">
                 <h2>Skills</h2>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <ul class="list-group">
                             <li class="list-group-item">HTML</li>
                             <li class="list-group-item">CSS</li>
@@ -148,7 +156,7 @@
                             <li class="list-group-item">Microsoft Excel</li>
                         </ul>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <ul class="list-group">
                             <li class="list-group-item">MySQL</li>
                             <li class="list-group-item">Visual Basic</li>
@@ -180,7 +188,7 @@
             </section>
         </main>
     </div>
-    <div class="text-center mt-3">
+    <div class="text-center">
         <button id="backButton" class="btn btn-primary">Back</button>
     </div>
     <script>
