@@ -1,19 +1,21 @@
-#wrapper{
-	width: 965px;
-	margin: 0 auto;
-    background-image: url(images/background2.png); */
-    background-position:center;
+/* Your provided CSS styles */
+.container {
+    width: auto;
+    margin: 0 auto;
+    background-image: url(images/background2.png);
+    background-position:initial;
     background-size: cover;
-    background-repeat: no-repeat;	
+    background-repeat: no-repeat;
 }
-#content{
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-	width: 960px;
-	text-align: left;
-	overflow: auto;
-	position: relative;
-	margin: 25px 0px 25px 0px;
-	border: #fff solid 2px;
+
+#content {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 960px;
+    text-align: left;
+    overflow: auto;
+    position: relative;
+    margin: 25px 0px 25px 0px;
+    border: #fff solid 2px;
 }
 
 .TableContent {
@@ -22,8 +24,8 @@
     border-collapse: collapse;
     border: 0.2px solid maroon;
     text-align: center;
-    }
-    
+}
+
 .data {
     color: maroon;
     font-family: "Arial";
@@ -37,7 +39,8 @@
     border: 1px solid maroon;
     text-align: left;
 }
-.tblPersonal_info caption{
+
+.tblPersonal_info caption {
     background-color: maroon;
     color: white;
 }
@@ -64,79 +67,95 @@
     font-family: "Arial";
     font-size: 110%;
 }
-.blank{
+
+.blank {
     float: none;
     clear: both;
     margin: 20px 0px 20px 0px;
 }
-#scholarship{
+
+#scholarship {
     text-indent: 50px;
 }
-.head{
+
+.head {
     text-align: left;
     color: maroon;
     font-weight: lighter;
 }
-.head1{
+
+.head1 {
     color: maroon;
     font-weight: lighter;
 }
-.value{
+
+.value {
     text-align: left;
 }
-.subj{
+
+.subj {
     text-align: left;
     padding-left: 5px;
 }
-.val{
+
+.val {
     text-align: left;
 }
-#img1{
+
+#img1 {
     height: 100px;
     width: 100px;
     margin: 50;
     padding-left: 30px;
 }
-#img2{
+
+#img2 {
     height: 100px;
     width: 100px;
     margin: 50;
     padding-right: 30px;
 }
-.label{
+
+.label {
     color: maroon;
-    border:0.01rem solid;
+    border: 0.01rem solid;
     border-color: brown;
     border-color: maroon;
 }
-.top_lbl{
+
+.top_lbl {
     text-align: left;
     color: maroon;
     border-color: maroon;
     padding-left: 10px;
 }
-.payment_details{
+
+.payment_details {
     text-align: left;
     padding-left: 20px;
     color: maroon;
     border-color: maroon;
 }
-.payment_value{
+
+.payment_value {
     text-align: right;
     padding-right: 20px;
     border-color: maroon;
 }
-.term_payment{
+
+.term_payment {
     text-align: left;
     padding-right: 20px;
     border-color: maroon;
 }
-.cashier{
+
+.cashier {
     border-color: maroon;
     text-align: center;
     color: maroon;
 }
-.bottom{
+
+.bottom {
     color: maroon;
 }
 
@@ -158,4 +177,19 @@
 
 #backButton:hover {
     background-color: darkred;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    #wrapper {
+        width: 100%;
+        background-image: none; /* Remove background image on smaller screens */
+    }
+
+    #content {
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        margin: 10px 0;
+    }
 }
