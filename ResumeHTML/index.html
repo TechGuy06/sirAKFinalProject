@@ -7,94 +7,182 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="main.css">
     <style>
         body {
-            font-size: 14px;
-            line-height: 1.6;
+            margin: 0px;
+            padding: 0px;
             background-color: #f8f9fa;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        header, main {
-            margin: 20px 0;
-        }
-        .jumbotron {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .jumbotron img {
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .list-unstyled li {
             font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
         }
-        h1, h2 {
+        a:hover {
+            text-decoration: underline;
+            color: #218c74;
             font-weight: bold;
         }
-        section {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            padding: 15px;
-            margin-bottom: 20px;
+        a:active {
+            text-decoration: underline;
+            color: #000;
+            font-weight: bold;
+        }
+        #wrapper {
+            width: 100%;
+            max-width: 965px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        #content {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 960px;
+            text-align: left;
+            overflow: auto;
+            position: relative;
+            margin: 25px 0px;
+            border: #fff solid 2px;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .blank {
+            float: none;
+            clear: both;
+            margin: 20px 0px;
+        }
+        #contact-details .header_1, #contact-details .header_2 {
+            width: 100%;
+            text-align: center;
+            margin: 40px 0px;
+        }
+        #contact-details .header_1 img {
+            border: #dfe4ea solid 2px;
+            padding: 16px;
+            margin: 10px 0px;
+        }
+        #contact-details h1 {
+            margin: 0px 0px 0px 20px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        #contact-details h3 {
+            margin: 0px 0px 32px 20px;
+            padding-left: 10px;
+            font-size: 25px;
+            color: #84817a;
+        }
+        #contact-details ul.info {
+            list-style: none;
+            margin: 0px 0px 15px -12px;
+            font-size: 18px;
+            padding-left: 0;
+        }
+        #contact-details li {
+            padding: 0px 0px 12px 0px;
+        }
+        li.address a, li.phone a, li.email a, li.site_url a, li.facebook a {
+            color: #000;
+        }
+        li.address a:hover, li.phone a:hover, li.email a:hover, li.site_url a:hover, li.facebook a:hover {
+            color: blue;
+            font-weight: bold;
+        }
+        h2 {
+            margin: 40px 0px 0px 0px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        dl {
+            margin: 0px 50px 0px 0px;
+        }
+        dt {
+            font-size: 23px;
+            font-weight: bolder;
+            text-align: right;
+            color: #84817a;
+        }
+        dd {
+            width: 100%;
+            margin: 10px 0;
+        }
+        p.edu-info {
+            margin: 10px 0px 0px 0px;
+            font-weight: bold;
+            color: #218c74;
+        }
+        p.school {
+            font-size: large;
+            font-weight: bold;
+        }
+        p.edu-info a {
+            color: #000;
+        }
+        p.edu-info a:hover {
+            color: blue;
+        }
+        p.time {
+            margin: 0px;
+            color: #84817a;
+        }
+        #skills ul {
+            list-style: square;
+            padding-left: 20px;
+        }
+        #skills li {
+            padding: 0px 0px 0px 25px;
+        }
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+        /* Floating Back Button */
+        #backButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             background-color: white;
+            color: black;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 1000;
         }
-        @media print {
-            body, .container {
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                font-size: 12pt;
-                background-color: white;
-                box-shadow: none;
-            }
-            .jumbotron, section {
-                border-bottom: 1px solid #ddd;
-                box-shadow: none;
-            }
-            .jumbotron img {
-                margin-bottom: 10px;
-                box-shadow: none;
-            }
-            h1, h2 {
-                font-size: 1.2em;
-            }
-            h3 {
-                font-size: 1em;
-            }
-            .list-unstyled li, .table td, .table th {
-                font-size: 0.9em;
-            }
-            .table {
-                margin-bottom: 0;
-            }
+        #backButton:hover {
+            background-color: lightblue;
         }
-        @media (max-width: 767px) {
-            .container {
-                padding: 10px;
-            }
-            .jumbotron {
-                padding: 10px;
-            }
-            .jumbotron img {
-                width: 150px;
-                height: 150px;
-            }
-            .list-unstyled li {
-                font-size: 14px;
-            }
-            h1 {
+        @media (max-width: 768px) {
+            #contact-details h1 {
                 font-size: 24px;
             }
+            #contact-details h3 {
+                font-size: 18px;
+            }
+            #contact-details ul.info {
+                font-size: 16px;
+            }
             h2 {
-                font-size: 20px;
+                font-size: 18px;
+            }
+            dt {
+                font-size: 18px;
+            }
+            p.edu-info {
+                font-size: 16px;
+            }
+            p.school {
+                font-size: medium;
+            }
+            #skills ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            #skills ul li {
+                padding: 5px 0;
             }
         }
     </style>
@@ -107,17 +195,17 @@
                     <img src="Formal.jpg" class="img-circle" width="200" height="200" alt="Photo of Marzan D. Ocampo">
                     <h1>Marzan D. Ocampo</h1>
                     <p class="lead">Third Year BSIT College Student</p>
-                    <ul class="list-unstyled">
-                        <li>Tagaytay City Cavite, Philippines</li>
-                        <li>(931) 029-9093</li>
-                        <li><a href="mailto:marzanocampo78@gmail.com" target="_blank">marzanocampo78@gmail.com</a></li>
-                        <li><a href="https://github.com/marzan078" target="_blank">GitHub: marzan078</a></li>
-                        <li><a href="https://web.facebook.com/marzan.ocampo" target="_blank">Facebook: @marzan.ocampo</a></li>
+                    <ul class="info list-unstyled">
+                        <li class="address">Tagaytay City Cavite, Philippines</li>
+                        <li class="phone">(931) 029-9093</li>
+                        <li class="email"><a href="mailto:marzanocampo78@gmail.com" target="_blank">marzanocampo78@gmail.com</a></li>
+                        <li class="site_url"><a href="https://github.com/marzan078" target="_blank">GitHub: marzan078</a></li>
+                        <li class="facebook"><a href="https://web.facebook.com/marzan.ocampo" target="_blank">Facebook: @marzan.ocampo</a></li>
                     </ul>
                 </div>
             </div>
         </header>
-        <main class="container">
+        <main id="content">
             <section class="mb-5">
                 <h2>Profile</h2>
                 <p>
@@ -160,7 +248,7 @@
             <section class="mb-5">
                 <h2>Skills</h2>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-xs-12 col-sm-6">
                         <ul class="list-group">
                             <li class="list-group-item">HTML</li>
                             <li class="list-group-item">CSS</li>
@@ -169,7 +257,7 @@
                             <li class="list-group-item">Microsoft Excel</li>
                         </ul>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-xs-12 col-sm-6">
                         <ul class="list-group">
                             <li class="list-group-item">MySQL</li>
                             <li class="list-group-item">Visual Basic</li>
@@ -179,7 +267,7 @@
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section>            
             <section class="mb-5">
                 <h2>Character Reference</h2>
                 <ul class="list-unstyled">
