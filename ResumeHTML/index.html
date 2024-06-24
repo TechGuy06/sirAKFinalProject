@@ -13,16 +13,10 @@
             font-size: 14px;
             line-height: 1.6;
             background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
             padding: 20px;
         }
         .container {
             max-width: 800px;
-            width: 100%;
             background-color: white;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -82,10 +76,31 @@
                 margin-bottom: 0;
             }
         }
+        @media (max-width: 767px) {
+            .container {
+                padding: 10px;
+            }
+            .jumbotron {
+                padding: 10px;
+            }
+            .jumbotron img {
+                width: 150px;
+                height: 150px;
+            }
+            .list-unstyled li {
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="wrapper" class="container">
+    <div id="wrapper">
         <header>
             <div class="jumbotron text-center">
                 <div class="container">
@@ -102,7 +117,7 @@
                 </div>
             </div>
         </header>
-        <main>
+        <main class="container">
             <section class="mb-5">
                 <h2>Profile</h2>
                 <p>
@@ -111,43 +126,41 @@
             </section>
             <section class="mb-5">
                 <h2>Education</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr class="info">
-                                <th>Level</th>
-                                <th>Year</th>
-                                <th>Institution</th>
-                                <th>Location</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>College</td>
-                                <td>Current</td>
-                                <td>City College of Tagaytay</td>
-                                <td>Kaybagal South, Tagaytay City, Cavite, Philippines</td>
-                            </tr>
-                            <tr>
-                                <td>Secondary</td>
-                                <td>2019 - 2020</td>
-                                <td>Anuling National High School</td>
-                                <td>Anuling Lejos II, Mendez Cavite, Philippines</td>
-                            </tr>
-                            <tr>
-                                <td>Elementary</td>
-                                <td>2015 - 2019</td>
-                                <td>Buna Lejos Elementary School</td>
-                                <td>Buna Lejos I, Indang Cavite, Philippines</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="info">
+                            <th>Level</th>
+                            <th>Year</th>
+                            <th>Institution</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>College</td>
+                            <td>Current</td>
+                            <td>City College of Tagaytay</td>
+                            <td>Kaybagal South, Tagaytay City, Cavite, Philippines</td>
+                        </tr>
+                        <tr>
+                            <td>Secondary</td>
+                            <td>2019 - 2020</td>
+                            <td>Anuling National High School</td>
+                            <td>Anuling Lejos II, Mendez Cavite, Philippines</td>
+                        </tr>
+                        <tr>
+                            <td>Elementary</td>
+                            <td>2015 - 2019</td>
+                            <td>Buna Lejos Elementary School</td>
+                            <td>Buna Lejos I, Indang Cavite, Philippines</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
             <section class="mb-5">
                 <h2>Skills</h2>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <ul class="list-group">
                             <li class="list-group-item">HTML</li>
                             <li class="list-group-item">CSS</li>
@@ -156,7 +169,7 @@
                             <li class="list-group-item">Microsoft Excel</li>
                         </ul>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <ul class="list-group">
                             <li class="list-group-item">MySQL</li>
                             <li class="list-group-item">Visual Basic</li>
@@ -188,9 +201,7 @@
             </section>
         </main>
     </div>
-    <div class="text-center">
-        <button id="backButton" class="btn btn-primary">Back</button>
-    </div>
+    <button id="backButton">Back</button>
     <script>
         document.getElementById("backButton").onclick = function () {
             window.history.back();
