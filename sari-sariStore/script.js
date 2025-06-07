@@ -4,6 +4,10 @@ function displayJeans() {
   targetElement.scrollIntoView();
 }
 
+function toggleSidebar() {
+    document.querySelector('.header').classList.toggle('show');
+  }
+
 function displayTshirt() {
   var targetElement = document.getElementById('tshirt');
   targetElement.scrollIntoView();
