@@ -1,40 +1,13 @@
-// Scroll functions for different sections
-function displayJeans() {
-  var targetElement = document.getElementById('jeans');
-  targetElement.scrollIntoView();
-}
+// ===== DOM Elements =====
+const toggleMenuBtn = document.getElementById('toggleMenu');
+const header = document.querySelector('.header');
+const cartButton = document.getElementById('cart-button');
+const cartContent = document.getElementById('cart-content');
+const backButton = document.getElementById('backButton');
+const scrollBtn = document.getElementById('scrollBtn');
 
-function toggleSidebar() {
-    document.querySelector('.header').classList.toggle('show');
-  }
-
-function displayTshirt() {
-  var targetElement = document.getElementById('tshirt');
-  targetElement.scrollIntoView();
-}
-
-function displayPerfume() {
-  var targetElement = document.getElementById('perfume');
-  targetElement.scrollIntoView();
-}
-
-function displaySando() {
-  var targetElement = document.getElementById('sando');
-  targetElement.scrollIntoView();
-}
-
-function displayToy() {
-  var targetElement = document.getElementById('toy');
-  targetElement.scrollIntoView();
-}
-
-function displayTop() {
-  var targetElement = document.getElementById('header');
-  targetElement.scrollIntoView();
-}
-
-// Items data
-let items = {
+// ===== Product Data =====
+const items = {
   jeans1: { name: "Jeans 1", price: 30, stock: 10 },
   jeans2: { name: "Jeans 2", price: 20, stock: 10 },
   jeans3: { name: "Jeans 3", price: 10, stock: 10 },
@@ -54,172 +27,202 @@ let items = {
   toy1: { name: "Toy 1", price: 5, stock: 10 },
   toy2: { name: "Toy 2", price: 6, stock: 10 },
   toy3: { name: "Toy 3", price: 8, stock: 10 },
-  toy4: { name: "Toy 4", price: 5, stock: 10 },
-  // Add more items here
+  toy4: { name: "Toy 4", price: 5, stock: 10 }
 };
 
-function increaseStock(itemKey) {
-  items[itemKey].stock++;
-  document.getElementById(itemKey + "-stock").textContent = items[itemKey].stock;
+// ===== Cart State =====
+let cart = {
+  items: [],
+  total: 0
+};
+
+// ===== Initialize App =====
+document.addEventListener('DOMContentLoaded', function() {
+  setupEventListeners();
+  updateCartCount();
+});
+
+// ===== Event Listeners =====
+function setupEventListeners() {
+  // Menu Toggle
+  toggleMenuBtn.addEventListener('click', toggleSidebar);
+  
+  // Cart Toggle
+  cartButton.addEventListener('click', toggleCart);
+  
+  // Back Button
+  backButton.addEventListener('click', function() {
+    window.history.back();
+  });
+  
+  // Scroll to Top
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
 
-function calculateTotal() {
-  let total = 0;
-  for (let itemKey in items) {
-    total += items[itemKey].price * (10 - items[itemKey].stock);
-  }
-  return total;
+// ===== Core Functions =====
+function toggleSidebar() {
+  header.classList.toggle('show');
 }
 
+function toggleCart() {
+  cartContent.classList.toggle('show');
+}
+
+// ===== Navigation Functions =====
+function displayJeans() {
+  document.getElementById('jeans').scrollIntoView({ behavior: 'smooth' });
+  header.classList.remove('show');
+}
+
+function displayTshirt() {
+  document.getElementById('tshirt').scrollIntoView({ behavior: 'smooth' });
+  header.classList.remove('show');
+}
+
+function displayPerfume() {
+  document.getElementById('perfume').scrollIntoView({ behavior: 'smooth' });
+  header.classList.remove('show');
+}
+
+function displaySando() {
+  document.getElementById('sando').scrollIntoView({ behavior: 'smooth' });
+  header.classList.remove('show');
+}
+
+function displayToy() {
+  document.getElementById('toy').scrollIntoView({ behavior: 'smooth' });
+  header.classList.remove('show');
+}
+
+// ===== Cart Functions =====
 function addToCart(itemName, itemKey) {
   if (items[itemKey].stock > 0) {
     items[itemKey].stock--;
     updateStockDisplay(itemKey);
-    updateCartSummary(itemName, items[itemKey].price);
+    
+    // Add to cart or increase quantity
+    const existingItem = cart.items.find(item => item.id === itemKey);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cart.items.push({
+        id: itemKey,
+        name: itemName,
+        price: items[itemKey].price,
+        quantity: 1
+      });
+    }
+    
+    updateCart();
   } else {
     alert(`Sorry, ${itemName} is out of stock.`);
   }
 }
 
 function updateStockDisplay(itemKey) {
-  document.getElementById(itemKey + "-stock").textContent = items[itemKey].stock;
+  const stockElement = document.getElementById(`${itemKey}-stock`);
+  if (stockElement) {
+    stockElement.textContent = items[itemKey].stock;
+  }
 }
 
-function updateCartSummary(itemName, itemPrice) {
-  let cartItemsElement = document.getElementById('cart-items');
-  let cartTotalElement = document.getElementById('cart-total');
-  let cartButton = document.getElementById('cart-button');
-
-  let existingCartItem = cartItemsElement.querySelector(`li[data-name="${itemName}"]`);
-  if (existingCartItem) {
-    let quantityElement = existingCartItem.querySelector('.quantity');
-    let quantity = parseInt(quantityElement.textContent) + 1;
-    quantityElement.textContent = quantity;
-  } else {
-    let cartItem = document.createElement('li');
-    cartItem.dataset.name = itemName;
+function updateCart() {
+  // Calculate total
+  cart.total = cart.items.reduce((total, item) => {
+    return total + (item.price * item.quantity);
+  }, 0);
+  
+  // Update UI
+  document.getElementById('cart-count-summary').textContent = cart.items.reduce((sum, item) => sum + item.quantity, 0);
+  document.getElementById('cart-total').textContent = cart.total.toFixed(2);
+  
+  // Render cart items
+  const cartItemsElement = document.getElementById('cart-items');
+  cartItemsElement.innerHTML = '';
+  
+  cart.items.forEach(item => {
+    const cartItem = document.createElement('div');
+    cartItem.className = 'cart-item';
     cartItem.innerHTML = `
-      ${itemName} - $${itemPrice.toFixed(2)}
-      <button class="button-81" onclick="increaseQuantity(this)">+</button>
-      <span class="quantity">1</span>
-      <button class="button-81" onclick="decreaseQuantity(this)">-</button>
+      <span>${item.name} x${item.quantity}</span>
+      <span>$${(item.price * item.quantity).toFixed(2)}</span>
+      <div>
+        <button onclick="changeQuantity('${item.id}', -1)">-</button>
+        <button onclick="changeQuantity('${item.id}', 1)">+</button>
+      </div>
     `;
     cartItemsElement.appendChild(cartItem);
-  }
-
-  let currentTotal = parseFloat(cartTotalElement.textContent);
-  cartTotalElement.textContent = (currentTotal + itemPrice).toFixed(2);
-
-  // Update cart button count
-  let itemCount = cartItemsElement.querySelectorAll('li').length;
-  cartButton.textContent = `Cart (${itemCount})`;
+  });
 }
 
-function increaseQuantity(button) {
-  let cartItem = button.parentElement;
-  let itemName = cartItem.dataset.name;
-  let quantityElement = cartItem.querySelector('.quantity');
-  let quantity = parseInt(quantityElement.textContent) + 1;
-  quantityElement.textContent = quantity;
-  let itemKey = Object.keys(items).find(key => items[key].name === itemName);
-  items[itemKey].stock--;
-  updateStockDisplay(itemKey);
-  updateTotal(itemKey, 1);
-}
-
-function decreaseQuantity(button) {
-  let cartItem = button.parentElement;
-  let itemName = cartItem.dataset.name;
-  let quantityElement = cartItem.querySelector('.quantity');
-  let quantity = parseInt(quantityElement.textContent) - 1;
+function changeQuantity(itemId, change) {
+  const item = cart.items.find(i => i.id === itemId);
+  if (!item) return;
   
-  if (quantity > 0) {
-    quantityElement.textContent = quantity;
-    let itemKey = Object.keys(items).find(key => items[key].name === itemName);
-    items[itemKey].stock++;
-    updateStockDisplay(itemKey);
-    updateTotal(itemKey, -1); // Update total when quantity decreases
+  if (change > 0) {
+    // Increase quantity
+    if (items[itemId].stock > 0) {
+      item.quantity++;
+      items[itemId].stock--;
+    } else {
+      alert("No more stock available!");
+      return;
+    }
   } else {
-    // If quantity becomes zero, remove the item from the cart
-    cartItem.remove();
-    let itemKey = Object.keys(items).find(key => items[key].name === itemName);
-    updateTotal(itemKey, -1 * parseInt(quantityElement.textContent)); // Update total for removed item
+    // Decrease quantity
+    item.quantity--;
+    items[itemId].stock++;
+    if (item.quantity <= 0) {
+      cart.items = cart.items.filter(i => i.id !== itemId);
+    }
   }
+  
+  updateStockDisplay(itemId);
+  updateCart();
 }
 
-
-function updateTotal(itemKey, change) {
-  let cartTotalElement = document.getElementById('cart-total');
-  let currentTotal = parseFloat(cartTotalElement.textContent);
-  let itemPrice = items[itemKey].price * change;
-  let newTotal = currentTotal + itemPrice;
-  cartTotalElement.textContent = newTotal.toFixed(2);
-}
-
-function toggleCart() {
-  let cartContent = document.getElementById('cart-content');
-  cartContent.classList.toggle('hidden');
+function increaseStock(itemKey) {
+  items[itemKey].stock++;
+  updateStockDisplay(itemKey);
 }
 
 function checkout() {
-  let cartTotalElement = document.getElementById('cart-total');
-  let discountRadios = document.getElementsByName('discount');
+  // Apply discount
+  const discountRadio = document.querySelector('input[name="discount"]:checked');
   let discount = 0;
-
-  for (let radio of discountRadios) {
-    if (radio.checked) {
-      discount = parseFloat(radio.value);
-      break;
-    }
+  if (discountRadio) {
+    discount = parseFloat(discountRadio.value);
   }
-
-  let totalAmount = parseFloat(cartTotalElement.textContent);
-  let discountedAmount = totalAmount * (1 - discount);
-
-  alert(`Thank you for your purchase!\nTotal amount paid: $${discountedAmount.toFixed(2)}`);
-
+  
+  const discountedTotal = cart.total * (1 - discount);
+  
+  alert(`Thank you for your purchase!\nTotal: $${discountedTotal.toFixed(2)}`);
+  
   // Reset cart
-  let cartItemsElement = document.getElementById('cart-items');
-  cartItemsElement.innerHTML = '';
-  cartTotalElement.textContent = '0.00';
-
-  // Reset cart button count
-  let cartButton = document.getElementById('cart-button');
-  cartButton.textContent = `Cart (0)`;
-}
-
-function resetCart() {
-  let cartItemsElement = document.getElementById('cart-items');
-  let cartTotalElement = document.getElementById('cart-total');
-  let cartCountElement = document.getElementById('cart-count-summary');
-
-  cartItemsElement.innerHTML = "";
-  cartTotalElement.textContent = "0.00";
-  cartCountElement.textContent = "0";
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  var scrollBtn = document.getElementById("scrollBtn");
-
-  scrollBtn.addEventListener("click", function() {
-      scrollToTop(1000); // 1000 milliseconds (1 second) for smooth scrolling
+  cart.items.forEach(item => {
+    items[item.id].stock += item.quantity;
+    updateStockDisplay(item.id);
   });
+  
+  cart.items = [];
+  cart.total = 0;
+  updateCart();
+  
+  // Hide cart
+  cartContent.classList.remove('show');
+}
 
-  function scrollToTop(duration) {
-      var start = window.pageYOffset;
-      var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+// ===== Helper Functions =====
+function updateCartCount() {
+  const count = cart.items.reduce((sum, item) => sum + item.quantity, 0);
+  document.getElementById('cart-count-summary').textContent = count;
+}
 
-      function scroll() {
-          var now = 'now' in window.performance ? performance.now() : new Date().getTime();
-          var time = Math.min(1, ((now - startTime) / duration));
-          window.scrollTo(0, Math.ceil((1 - time) * start));
-          if (window.pageYOffset === 0) return;
-          requestAnimationFrame(scroll);
-      }
-
-      scroll();
+window.addEventListener('resize', function() {
+  const header = document.querySelector('.header');
+  if (window.innerWidth >= 900) {
+    header.classList.remove('show');
   }
 });
-document.getElementById("backButton").onclick = function () {
-  window.history.back();
-};
